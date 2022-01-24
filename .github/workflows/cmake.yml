@@ -10,8 +10,8 @@ env:
   # setting the name of the executable used in the execute steps below.
   # THIS MUST MATCH THE NAME OF THE EXECUTABLE IN THE CMAKELISTS.TXT file's
   #   add_executable command.
-  RUN_EXE: 22s_pa01
-  TEST_EXE: 22s_pa01_test
+  RUN_EXE: pa01
+  TEST_EXE: pa01_test
   # the name of any input files (use relative path)
   INPUT_FILE:
   # the name of any output files (use relative paths)
