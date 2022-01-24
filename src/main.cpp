@@ -3,6 +3,8 @@
 //
 
 #include <iostream>
+#include "Wall.h"
+#include "Art.h"
 
 using namespace std;
 

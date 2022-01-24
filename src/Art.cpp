@@ -23,3 +23,15 @@ double Art::getPrice() { return this->price; }
 void Art::setHeight(int height) { this->height = height; }
 void Art::setWidth(int width) { this->width = width; }
 void Art::setPrice(double price) { this->price = price; }
+
+bool Art::operator==(Art& other) {
+    return this->height == other.getHeight() && this->width == other.getWidth() && this->price == other.getPrice();
+}
+
+bool Art::operator<(Art& other) {
+    return this->height*this->width < other.getHeight()*other.getWidth();
+}
+
+bool Art::operator>(Art& other) {
+    return this->height*this->width > other.getHeight()*other.getWidth();
+}

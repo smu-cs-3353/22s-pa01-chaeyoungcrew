@@ -1,5 +1,6 @@
 //
 // Created by Zachary on 1/24/2022.
+// The art that will go on the wall.
 //
 
 #ifndef INC_22S_PA01_ART_H
@@ -55,6 +56,13 @@ public:
        * Set the price of the art
        */
       void setPrice(double);
+
+      /**
+       * Comparators
+       */
+       bool operator==(Art&);
+       bool operator<(Art&);
+       bool operator>(Art&);
 };
 
 #endif //INC_22S_PA01_ART_H
