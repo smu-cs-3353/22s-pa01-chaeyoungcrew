@@ -6,6 +6,12 @@
 #include "catch.hpp"
 #include "catch_setup.h"
 
+int runCatchTests();
+
+int main() {
+    return runCatchTests();
+}
+
 int runCatchTests()
 {
     //This line of code causes the Catch library to
