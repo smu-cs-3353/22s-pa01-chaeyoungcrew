@@ -82,6 +82,12 @@ public:
      * @return double
      */
     double getCurrentPrice();
+
+    /**
+     * Overloaded output operator
+     * @return
+     */
+    friend std::ostream& operator<<(std::ostream&, const Wall&);
 };
 
 #endif //INC_22S_PA01_WALL_H

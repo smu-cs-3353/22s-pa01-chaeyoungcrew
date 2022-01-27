@@ -60,3 +60,15 @@ Art &Museum::getArt(int ID) {
     }
     throw out_of_range("ID not found in list");
 }
+
+std::ostream &operator<<(ostream& fout, const Museum& museum) {
+    fout << "WxH: " << museum.wall->getWidth() << "x" << museum.wall->getHeight() << ", current width: "
+    << museum.wall->getCurrentWidth() << ", price: " << museum.wall->getCurrentPrice() << ", Art Pieces: ";
+    for(auto& a : museum.artPieces) {
+        fout << "(" << a.first << ": " << a.second << "), ";
+    }
+
+    return fout;
+}
+
+

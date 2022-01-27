@@ -16,6 +16,9 @@ int main(int argc, char** argv) {
         m.getWall();
         m.getList();
         m.getArt(12);
+        cout << m << std::endl;
+        cout << m.getWall() << std::endl;
+        cout << m.getArt(12) << std::endl;
     }
     return 0;
 }

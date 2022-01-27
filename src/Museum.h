@@ -28,6 +28,12 @@ public:
     vector<std::pair<Art, bool>>& getList();
     Art& getArt(int);
 
+    /**
+     * Overloaded output stream operator
+     * @return
+     */
+    friend std::ostream &operator<<(std::ostream&, const Museum&);
+
 };
 
 

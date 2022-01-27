@@ -6,6 +6,8 @@
 #ifndef INC_22S_PA01_ART_H
 #define INC_22S_PA01_ART_H
 
+#include <iostream>
+
 class Art {
 private:
     // Dimensions
@@ -77,6 +79,12 @@ public:
        bool operator==(Art&);
        bool operator<(Art&);
        bool operator>(Art&);
+
+       /**
+        * Overloaded output operator
+        * @return
+        */
+       friend std::ostream &operator<<(std::ostream&, const Art&);
 };
 
 #endif //INC_22S_PA01_ART_H
