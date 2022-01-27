@@ -121,7 +121,7 @@ bool DSLinkedList<T>::operator==(const DSLinkedList<T>& other) const {
     Node<T>* temp = this->head;
     Node<T>* otherTemp = other.head;
     while (temp != nullptr && otherTemp != nullptr) {
-        if (!(temp->data == otherTemp->data))
+        if (temp->data != otherTemp->data)
             return false;
         temp = temp->next;
         otherTemp = otherTemp->next;

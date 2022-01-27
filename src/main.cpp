@@ -3,8 +3,7 @@
 //
 
 #include <iostream>
-#include "Wall.h"
-#include "Art.h"
+#include "Museum.h"
 
 using namespace std;
 
@@ -12,7 +11,14 @@ int main(int argc, char** argv) {
     if (argc == 1)
         cout << "No arguments provided." << endl;
     else {
-        cout << "Hello World!" << endl;
+        Museum m;
+        m.readFile(argv[1]);
+        m.getWall();
+        m.getList();
+        m.getArt(12);
+        cout << m << std::endl;
+        cout << m.getWall() << std::endl;
+        cout << m.getArt(12) << std::endl;
     }
     return 0;
 }
