@@ -10,19 +10,22 @@ Art::Art() {
     this->price = 1;
 }
 
-Art::Art(int height, int width, double price) {
+Art::Art(int height, int width, int ID, double price) {
     this->height = height;
     this->width = width;
+    this->pictureID = ID;
     this->price = price;
 }
 
 int Art::getHeight() { return this->height; }
 int Art::getWidth() { return this->width; }
-double Art::getPrice() { return this->price; }
+int Art::getID() { return this->pictureID; }
+int Art::getPrice() { return this->price; }
 
 void Art::setHeight(int height) { this->height = height; }
 void Art::setWidth(int width) { this->width = width; }
-void Art::setPrice(double price) { this->price = price; }
+void Art::setID(int ID) { this->pictureID = ID; }
+void Art::setPrice(int price) { this->price = price; }
 
 bool Art::operator==(Art& other) {
     return this->height == other.getHeight() && this->width == other.getWidth() && this->price == other.getPrice();

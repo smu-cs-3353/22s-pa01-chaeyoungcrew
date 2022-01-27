@@ -11,8 +11,11 @@ private:
     // Dimensions
     int height, width;
 
+    //ID
+    int pictureID;
+
     // Value
-    double price;
+    int price;
 public:
     /**
      * Default Constructor
@@ -22,7 +25,7 @@ public:
     /**
      * Overloaded Constructor
      */
-    Art(int, int, double);
+    Art(int, int, int, double);
 
     /**
      * Get the height of the art
@@ -37,10 +40,16 @@ public:
      int getWidth();
 
      /**
-      * Get the price of the art
-      * @return double
+      * Get the picture ID of the art
+      * @return
       */
-     double getPrice();
+     int getID();
+
+     /**
+      * Get the price of the art
+      * @return int
+      */
+     int getPrice();
 
      /**
       * Set the height of the art
@@ -53,9 +62,14 @@ public:
       void setWidth(int);
 
       /**
+       * Set the picture ID of the art
+       */
+      void setID(int);
+
+      /**
        * Set the price of the art
        */
-      void setPrice(double);
+      void setPrice(int);
 
       /**
        * Comparators

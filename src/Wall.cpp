@@ -41,6 +41,8 @@ void Wall::removeArt(Art& art) {
 }
 
 int Wall::getWidth() { return this->width; }
+void Wall::setWidth(int w) { this->width = w; }
 int Wall::getHeight() { return this->height; }
+void Wall::setHeight(int h) { this->height = h; }
 int Wall::getCurrentWidth() { return this->currentWidth; }
 double Wall::getCurrentPrice() { return this->currentPrice; }

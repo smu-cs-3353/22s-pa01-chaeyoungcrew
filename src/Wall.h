@@ -54,10 +54,22 @@ public:
     int getWidth();
 
     /**
+     * Set the width of the wall
+     * @param w the width
+     */
+     void setWidth(int);
+
+    /**
      * Get the height of the wall
      * @return int
      */
     int getHeight();
+
+    /**
+     * Set the width of the wall
+     * @param h the width
+     */
+    void setHeight(int);
 
     /**
      * Get the current width of the art on the wall
