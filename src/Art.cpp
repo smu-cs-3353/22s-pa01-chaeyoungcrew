@@ -10,7 +10,7 @@ Art::Art() {
     this->price = 1;
 }
 
-Art::Art(int height, int width, int ID, double price) {
+Art::Art(int ID, int price, int width, int height) {
     this->height = height;
     this->width = width;
     this->pictureID = ID;

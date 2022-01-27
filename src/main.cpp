@@ -13,6 +13,9 @@ int main(int argc, char** argv) {
     else {
         Museum m;
         m.readFile(argv[1]);
+        m.getWall();
+        m.getList();
+        m.getArt(12);
     }
     return 0;
 }

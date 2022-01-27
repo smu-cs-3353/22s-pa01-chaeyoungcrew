@@ -19,7 +19,6 @@ void Museum::readFile(char *filename) {
     if(!artFile.is_open())
         throw runtime_error("ERROR: Could not open art file");
 
-    char* buffer = new char[1024];
     int temp = 0;
     artFile >> temp;
     wall->setWidth(temp);
@@ -28,22 +27,36 @@ void Museum::readFile(char *filename) {
     std::cout << wall->getWidth() << ", " << wall->getHeight() << std::endl;
 
     artFile >> temp;
-    int numArt = temp;
-    for(int i = 0; i < numArt; i++) {
-        artFile >> temp;
-        int ID = temp;
-        artFile >> temp;
-        int price = temp;
-        artFile >> temp;
-        int width = temp;
-        artFile >> temp;
-        int height = temp;
-        Art art(height, width, ID, price);
+    int* info = new int[4];
+    for(int i = 0; i < temp; i++) {
+        artFile >> info[0];
+        artFile >> info[1];
+        artFile >> info[2];
+        artFile >> info[3];
+
+        Art art(info[0], info[1], info[2], info[3]);
         artPieces.emplace_back(art, false);
+        std::cout << "id: " << art.getID() << std::endl;
+        std::cout << "price: " << art.getPrice() << std::endl;
+        std::cout << "width: " << art.getWidth() << std::endl;
+        std::cout << "height: " << art.getHeight() << std::endl << std::endl;
     }
+
+    delete[] info;
 }
 
 Wall &Museum::getWall() {
     return *wall;
 }
 
+vector<std::pair<Art, bool>> &Museum::getList() {
+    return artPieces;
+}
+
+Art &Museum::getArt(int ID) {
+    for(int i = 0; i < artPieces.size(); i++) {
+        if(artPieces[i].first.getID() == ID)
+            return artPieces[i].first;
+    }
+    throw out_of_range("ID not found in list");
+}

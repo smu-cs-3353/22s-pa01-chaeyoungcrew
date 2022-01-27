@@ -26,7 +26,7 @@ public:
     void readFile(char* filename);
     Wall& getWall();
     vector<std::pair<Art, bool>>& getList();
-    Art& getArt();
+    Art& getArt(int);
 
 };
 

@@ -25,7 +25,7 @@ public:
     /**
      * Overloaded Constructor
      */
-    Art(int, int, int, double);
+    Art(int, int, int, int);
 
     /**
      * Get the height of the art
