@@ -8,7 +8,6 @@
 #include <iostream>
 #include <cmath>
 #include <float.h>
-#include <Exception>
 #include "Museum.h"
 
 using namespace std;
