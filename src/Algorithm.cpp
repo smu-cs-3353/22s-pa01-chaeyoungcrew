@@ -1,30 +1,53 @@
 //
 // Created by Daniel Ryan on 1/25/22.
 //
+// Working Comments: The brute force algorithm is finished, but it currently
+// only works if the IDs start at 0, and have every integer up to the size.
+// Maybe change it so that accessing the Art can be by ID or by location in the vector?
+//
 
 #include "Algorithm.h"
 
 double Algorithm::bruteForce(char* file) {
-    //list of art pieces (vector<Art>): m.getList();
-    //access the wall and related methods (Wall): m.getWall();
-
     // initialize the museum with the given file
     m.readFile(file);
-    bfGetSubsets();
+
+    // vector of all subsets found through brute force
+    vector<Wall> subsets = bfGetSubsets();
+
+    // loop through list of subsets and find the one with the maximum value
+    double max = -DBL_MAX;
+    for (int i = 0; i < subsets.size(); i++) {
+        if (subsets.at(i).getCurrentPrice() > max)
+            max = subsets.at(i).getCurrentPrice();
+    }
+    return max;
 }
 
-void Algorithm::bfGetSubsets() {
-    // for loop delineating the limit of art pieces in the subset
-    for (int limit = 1; limit < m.getList().size(); limit++) {
-        vector<Art> subset;
-        bfGetSubsetsNest(subset, 0, limit);
-    }
-}
+vector<Wall> Algorithm::bfGetSubsets() {
+    // trackers for the loops
+    int size = m.getList().size();
+    int big = pow(2, size);
 
-void Algorithm::bfGetSubsetsNest(vector<Art> subset, int start, int numLeft) {
-    for (int i = start; i < m.getList().size()-numLeft; i++) {
-        subset.push_back(m.getArt(i));
-        if (numLeft > 1)
-            bfGetSubsetsNest(subset, i+1, numLeft-1);
+    // create all possible subsets
+    vector<Wall> subsets;
+    for (int i = 0; i < big; i++) {
+        // boolean variable to handle for invalid subsets
+        bool add = true;
+        for (int j = 0; j < size; j++) {
+            if ((i & (1 << j)) != 0) {
+                // handle for if the art cannot be added, if it can't, this is an invalid subset so throw it away
+                try { m.addArt(j); }
+                catch (exception e) { add = false; }
+            }
+        }
+        // add the wall to the list of possible walls
+        if (add) {
+            Wall tempWall = m.getWall();
+            subsets.push_back(tempWall);
+        }
+        // clear the working object for a new subset
+        m.clearWall();
     }
+    return subsets;
 }

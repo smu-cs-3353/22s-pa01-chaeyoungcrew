@@ -21,7 +21,8 @@ int main(int argc, char** argv) {
         cout << m.getWall() << std::endl;
         cout << m.getArt(12) << std::endl;*/
 
-
+        Algorithm a;
+        cout << a.bruteForce("../Resources/testBruteForce") << endl;
     }
     return 0;
 }

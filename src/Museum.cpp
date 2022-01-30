@@ -24,7 +24,8 @@ void Museum::readFile(char *filename) {
     wall->setWidth(temp);
     artFile >> temp;
     wall->setHeight(temp);
-    std::cout << wall->getWidth() << ", " << wall->getHeight() << std::endl;
+
+    string buffer;
 
     artFile >> temp;
     int* info = new int[4];
@@ -36,10 +37,6 @@ void Museum::readFile(char *filename) {
 
         Art art(info[0], info[1], info[2], info[3]);
         artPieces.emplace_back(art, false);
-        std::cout << "id: " << art.getID() << std::endl;
-        std::cout << "price: " << art.getPrice() << std::endl;
-        std::cout << "width: " << art.getWidth() << std::endl;
-        std::cout << "height: " << art.getHeight() << std::endl << std::endl;
     }
 
     delete[] info;
@@ -58,7 +55,22 @@ Art &Museum::getArt(int ID) {
         if(artPieces[i].first.getID() == ID)
             return artPieces[i].first;
     }
-    throw out_of_range("ID not found in list");
+    throw out_of_range(to_string(ID) + " not found in list");
+}
+
+void Museum::addArt(int ID) {
+    for(int i = 0; i < artPieces.size(); i++) {
+        if (artPieces[i].first.getID() == ID) {
+            wall->addArt(artPieces[i].first);
+            return;
+        }
+    }
+    throw out_of_range(to_string(ID) + " not found in list");
+}
+
+void Museum::clearWall() {
+    wall->setCurrentWidth(0);
+    wall->setCurrentPrice(0.0);
 }
 
 std::ostream &operator<<(ostream& fout, const Museum& museum) {

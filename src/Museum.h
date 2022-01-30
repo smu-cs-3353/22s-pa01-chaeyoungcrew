@@ -27,6 +27,9 @@ public:
     Wall& getWall();
     vector<std::pair<Art, bool>>& getList();
     Art& getArt(int);
+    void addArt(int);
+
+    void clearWall();
 
     /**
      * Overloaded output stream operator

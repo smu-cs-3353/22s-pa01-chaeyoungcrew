@@ -6,4 +6,4 @@ set(CMAKE_CXX_FLAGS_RELEASE -O3)
 configure_file(Resources/artTest.txt Resources/artTest.txt COPYONLY)
 
 add_executable(pa01 src/main.cpp src/Art.cpp src/Wall.cpp src/DSLinkedList.h src/Museum.cpp src/Algorithm.cpp)
-add_executable(pa01_test src/test.cpp src/catch_setup.cpp src/Art.cpp src/Wall.cpp src/DSLinkedList.h)
+add_executable(pa01_test src/catch_setup.cpp src/test.cpp src/Art.cpp src/Wall.cpp src/DSLinkedList.h)
