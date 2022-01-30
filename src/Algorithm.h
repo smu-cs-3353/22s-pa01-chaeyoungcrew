@@ -10,12 +10,16 @@
 
 
 class Algorithm {
+private:
+    Museum m;
 
+    void bfGetSubsets();
+    void bfGetSubsetsNest(vector<Art>, int, int)
 public:
     Algorithm() = default;
 
-    double bruteForce(Museum&);
-    double mostExpensiveFirst(Museum&);
+    double bruteForce(char*);
+    double mostExpensiveFirst(char*);
 
 };
 
