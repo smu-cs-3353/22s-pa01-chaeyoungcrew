@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include "Museum.h"
+#include "Algorithm.h"
 
 using namespace std;
 
@@ -12,13 +13,16 @@ int main(int argc, char** argv) {
         cout << "No arguments provided." << endl;
     else {
         Museum m;
-        m.readFile(argv[1]);
+        /*m.readFile(argv[1]);
         m.getWall();
         m.getList();
         m.getArt(12);
         cout << m << std::endl;
         cout << m.getWall() << std::endl;
-        cout << m.getArt(12) << std::endl;
+        cout << m.getArt(12) << std::endl;*/
+
+        Algorithm a;
+        cout << a.bruteForce("../Resources/testBruteForce") << endl;
     }
     return 0;
 }

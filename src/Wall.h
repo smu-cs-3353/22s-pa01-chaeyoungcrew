@@ -78,10 +78,20 @@ public:
     int getCurrentWidth();
 
     /**
+     * Set the current width of the art on the wall
+     */
+    void setCurrentWidth(int);
+
+    /**
      * Get the current price of the art on the wall
      * @return double
      */
     double getCurrentPrice();
+
+    /**
+     * Set the current price of the art on the wall
+     */
+    void setCurrentPrice(double);
 
     /**
      * Overloaded output operator

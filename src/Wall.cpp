@@ -45,7 +45,9 @@ void Wall::setWidth(int w) { this->width = w; }
 int Wall::getHeight() { return this->height; }
 void Wall::setHeight(int h) { this->height = h; }
 int Wall::getCurrentWidth() { return this->currentWidth; }
+void Wall::setCurrentWidth(int w) { this->currentWidth = w; }
 double Wall::getCurrentPrice() { return this->currentPrice; }
+void Wall::setCurrentPrice(double p) { this->currentPrice = p; }
 
 std::ostream &operator<<(ostream& fout, const Wall& wall) {
     fout << "WxH: " << wall.width << "x" << wall.height << ", current width: " << wall.currentWidth <<
