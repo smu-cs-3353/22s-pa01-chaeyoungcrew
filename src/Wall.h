@@ -24,7 +24,7 @@ private:
     // current price of all paintings on the wall
     double currentPrice;
 
-    // vector of art pieces on the wall
+    // linked list of art pieces on the wall
     DSLinkedList<Art> pieces;
 public:
     /**
@@ -34,16 +34,20 @@ public:
 
     /**
      * Overloaded Constructor
+     * @param height the height of the wall
+     * @param width the width of the wall
      */
     Wall(int, int);
 
     /**
      * Add an art piece to the wall
+     * @param art the art piece to be added
      */
     void addArt(Art&);
 
     /**
      * Remove an art piece from the wall
+     * @param art the art piece to be removed
      */
     void removeArt(Art&);
 
@@ -66,8 +70,8 @@ public:
     int getHeight();
 
     /**
-     * Set the width of the wall
-     * @param h the width
+     * Set the height of the wall
+     * @param h the height
      */
     void setHeight(int);
 
@@ -79,6 +83,7 @@ public:
 
     /**
      * Set the current width of the art on the wall
+     * @param w the width
      */
     void setCurrentWidth(int);
 
@@ -90,12 +95,13 @@ public:
 
     /**
      * Set the current price of the art on the wall
+     * @param p the price
      */
     void setCurrentPrice(double);
 
     /**
      * Overloaded output operator
-     * @return
+     * @return std::ostream
      */
     friend std::ostream& operator<<(std::ostream&, const Wall&);
 };

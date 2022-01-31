@@ -16,24 +16,64 @@
 
 class Museum {
 private:
+    // the current wall
     Wall* wall;
+
+    // the list of available art pieces
     vector<std::pair<Art, bool>> artPieces;
 
 public:
+    /**
+     * Default Constructor
+     */
     Museum();
+
+    /**
+     * Overloaded Constructor
+     * @param w the width of the wall
+     * @param h the height of the wall
+     */
     Museum(int, int);
 
+    /**
+     * Populate the list of art pieces given an input file
+     * @param filename the name of the input file
+     */
     void readFile(char* filename);
+
+    /**
+     * Get the wall
+     * @return Wall
+     */
     Wall& getWall();
+
+    /**
+     * Get the list of art pieces
+     * @return vector<std::pair<Art, bool>>
+     */
     vector<std::pair<Art, bool>>& getList();
+
+    /**
+     * Get a specific art piece
+     * @param ID the id of the art piece
+     * @return Art
+     */
     Art& getArt(int);
+
+    /**
+     * Add an art piece to the wall
+     * @param ID the id of the art piece
+     */
     void addArt(int);
 
+    /**
+     * Clear the wall of all art pieces
+     */
     void clearWall();
 
     /**
      * Overloaded output stream operator
-     * @return
+     * @return std::ostream
      */
     friend std::ostream &operator<<(std::ostream&, const Museum&);
 
