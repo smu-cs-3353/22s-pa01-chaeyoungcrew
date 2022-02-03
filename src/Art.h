@@ -17,11 +17,6 @@ private:
 
 
     // Value
-<<<<<<< Updated upstream
-    double price;
-=======
-
->>>>>>> Stashed changes
 public:
     int price;
     int pictureID;

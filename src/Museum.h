@@ -68,8 +68,6 @@ public:
      */
     Art& getArt(int);
 
-<<<<<<< Updated upstream
-=======
     /**
      * returns the list of art sorted by price from greatest to least
      * @return
@@ -77,7 +75,6 @@ public:
     std::multiset<Art,LessPrice>& getSortedArt();
 
 
->>>>>>> Stashed changes
     /**
      * Add an art piece to the wall
      * @param ID the id of the art piece

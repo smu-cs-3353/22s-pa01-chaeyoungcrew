@@ -50,9 +50,7 @@ vector<Wall> Algorithm::bfGetSubsets() {
         m.clearWall();
     }
     return subsets;
-<<<<<<< Updated upstream
-}
-=======
+    }
 }
 
 double Algorithm::mostExpensiveFirst(char *file) {
@@ -71,4 +69,3 @@ double Algorithm::mostExpensiveFirst(char *file) {
 
 
 }
->>>>>>> Stashed changes
