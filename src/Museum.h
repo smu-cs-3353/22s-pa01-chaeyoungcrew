@@ -29,8 +29,6 @@ public:
     Art& getArt(int);
     void addArt(int);
 
-<<<<<<< Updated upstream
-=======
     /**
      * Add an art piece to the wall using it's index in the vector
      * @param i the index in the vector
@@ -40,7 +38,6 @@ public:
     /**
      * Clear the wall of all art pieces
      */
->>>>>>> Stashed changes
     void clearWall();
 
     /**

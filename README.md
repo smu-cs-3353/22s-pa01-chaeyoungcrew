@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 # 🖼Art is Fun!
 
 Art is Fun! is a C++ project that calculates the most valuable collection of paintings that will fit along a centered position on a wall. This is achieved by use of 3 different algorithms: brute force, most expensive first, and most efficient.
@@ -19,4 +17,3 @@ $ ./pa01 Resources/artTest.txt
 
 ## Credits
 This project was completed entirely by Zach Suzuki and Daniel Ryan for CS3353, Fundamentals of Algorithms taught by Dr. Fontenot.
->>>>>>> Stashed changes
