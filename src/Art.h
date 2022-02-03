@@ -14,11 +14,12 @@ private:
     int height, width;
 
     //ID
-    int pictureID;
+
 
     // Value
-    double price;
 public:
+    int price;
+    int pictureID;
     /**
      * Default Constructor
      */

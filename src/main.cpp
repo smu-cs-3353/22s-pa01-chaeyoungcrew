@@ -23,6 +23,8 @@ int main(int argc, char** argv) {
 
         Algorithm a;
         cout << a.bruteForce("../Resources/artTest.txt") << endl;
+        cout << a.mostExpensiveFirst("../Resources/artTest.txt") << endl;
+
     }
     return 0;
 }

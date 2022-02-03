@@ -52,8 +52,21 @@ vector<Wall> Algorithm::bfGetSubsets() {
         m.clearWall();
     }
     return subsets;
+    }
 }
 
-double Algorithm::mostExpensiveFirst(char *) {
-    return 0;
+double Algorithm::mostExpensiveFirst(char *file) {
+    // initialize the museum with the given file
+//    m.readFile(file);
+
+    m.clearWall();
+
+
+    bool add = true;
+    for(auto it = m.getSortedArt().begin(); it != m.getSortedArt().end(); it++) {
+        try {m.addArt(it->pictureID); }
+        catch(exception& e) {continue;}
+    }
+    return m.getWall().getCurrentPrice();
+
 }
