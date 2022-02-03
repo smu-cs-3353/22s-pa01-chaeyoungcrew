@@ -14,6 +14,7 @@ using namespace std;
 
 class Algorithm {
 private:
+    // The museum
     Museum m;
 
     /**
@@ -22,10 +23,14 @@ private:
      */
     vector<Wall> bfGetSubsets();
 public:
+    /**
+     * Default Constructor
+     */
     Algorithm() = default;
 
     /**
      * Calculate all possible walls and return the value of the best wall given an input file
+     * @param file the name of the input file
      * @return double
      */
     double bruteForce(char*);
@@ -33,6 +38,7 @@ public:
     /**
      * Create the wall in order from most expensive to least expensive paintings and
      * return the value given an input file
+     * @param file the name of the input file
      * @return double
      */
     double mostExpensiveFirst(char*);

@@ -17,7 +17,7 @@ private:
     int pictureID;
 
     // Value
-    int price;
+    double price;
 public:
     /**
      * Default Constructor
@@ -26,63 +26,72 @@ public:
 
     /**
      * Overloaded Constructor
+     *
+     * @param ID the id of the art piece
+     * @param price the price of the art piece
+     * @param width the width of the art piece
+     * @param height the height of the art piece
      */
-    Art(int, int, int, int);
+    Art(int, double, int, int);
 
     /**
-     * Get the height of the art
+     * Get the height of the art piece
      * @return int
      */
-    int getHeight();
+    int getHeight() const;
 
     /**
-     * Get the width of the art
+     * Get the width of the art piece
      * @return int
      */
-     int getWidth();
+     int getWidth() const;
 
      /**
-      * Get the picture ID of the art
-      * @return
-      */
-     int getID();
-
-     /**
-      * Get the price of the art
+      * Get the picture ID of the art piece
       * @return int
       */
-     int getPrice();
+     int getID() const;
 
      /**
-      * Set the height of the art
+      * Get the price of the art piece
+      * @return double
+      */
+     double getPrice() const;
+
+     /**
+      * Set the height of the art piece
+      * @param height the height of the art piece
       */
       void setHeight(int);
 
       /**
-       * Set the width of the art
+       * Set the width of the art piece
+       * @param width the width of the art piece
        */
       void setWidth(int);
 
       /**
-       * Set the picture ID of the art
+       * Set the picture ID of the art piece
+       * @param ID the id of the art piece
        */
       void setID(int);
 
       /**
-       * Set the price of the art
+       * Set the price of the art piece
+       * @param price the price of the art piece
        */
-      void setPrice(int);
+      void setPrice(double);
 
       /**
        * Comparators
        */
-       bool operator==(Art&);
-       bool operator<(Art&);
-       bool operator>(Art&);
+       bool operator==(const Art&) const;
+       bool operator<(const Art&) const;
+       bool operator>(const Art&) const;
 
        /**
         * Overloaded output operator
-        * @return
+        * @return std::ostream
         */
        friend std::ostream &operator<<(std::ostream&, const Art&);
 };
