@@ -52,7 +52,6 @@ vector<Wall> Algorithm::bfGetSubsets() {
         m.clearWall();
     }
     return subsets;
-    }
 }
 
 double Algorithm::mostExpensiveFirst(char *file) {
