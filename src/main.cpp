@@ -22,9 +22,8 @@ int main(int argc, char** argv) {
         cout << m.getArt(12) << std::endl;*/
 
         Algorithm a;
-        cout << a.bruteForce("../Resources/testBruteForce") << endl;
-
-        cout << a.mostExpensiveFirst("../Resources/testBruteForce") << endl;
+        cout << a.bruteForce("../Resources/artTest.txt") << endl;
+        cout << a.mostExpensiveFirst("../Resources/artTest.txt") << endl;
 
     }
     return 0;

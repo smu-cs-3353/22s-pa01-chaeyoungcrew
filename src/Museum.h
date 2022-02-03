@@ -82,6 +82,12 @@ public:
     void addArt(int);
 
     /**
+     * Add an art piece to the wall using it's index in the vector
+     * @param i the index in the vector
+     */
+    void addArtIndex(int);
+
+    /**
      * Clear the wall of all art pieces
      */
     void clearWall();

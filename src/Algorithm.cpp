@@ -35,10 +35,12 @@ vector<Wall> Algorithm::bfGetSubsets() {
         // boolean variable to handle for invalid subsets
         bool add = true;
         for (int j = 0; j < size; j++) {
+            //for my ref: this operation is used to iterate through every permutation of the different art pieces
+            //using binary and bits
             if ((i & (1 << j)) != 0) {
                 // handle for if the art cannot be added, if it can't, this is an invalid subset so throw it away
-                try { m.addArt(j); }
-                catch (exception e) { add = false; }
+                try { m.addArtIndex(j); }
+                catch (exception& e) { add = false; }
             }
         }
         // add the wall to the list of possible walls
@@ -66,6 +68,5 @@ double Algorithm::mostExpensiveFirst(char *file) {
         catch(exception& e) {continue;}
     }
     return m.getWall().getCurrentPrice();
-
 
 }

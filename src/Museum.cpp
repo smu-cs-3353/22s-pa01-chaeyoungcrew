@@ -72,6 +72,13 @@ void Museum::addArt(int ID) {
     throw out_of_range(to_string(ID) + " not found in list");
 }
 
+void Museum::addArtIndex(int i) {
+    if(i > artPieces.size() || i < 0)
+        throw out_of_range(to_string(i) + " is out of range");
+
+    wall->addArt(artPieces[i].first);
+}
+
 void Museum::clearWall() {
     wall->setCurrentWidth(0);
     wall->setCurrentPrice(0.0);
