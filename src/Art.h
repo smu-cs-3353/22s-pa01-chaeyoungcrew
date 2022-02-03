@@ -14,11 +14,17 @@ private:
     int height, width;
 
     //ID
-    int pictureID;
+
 
     // Value
+<<<<<<< Updated upstream
     double price;
+=======
+
+>>>>>>> Stashed changes
 public:
+    int price;
+    int pictureID;
     /**
      * Default Constructor
      */

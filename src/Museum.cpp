@@ -37,8 +37,12 @@ void Museum::readFile(char *filename) {
 
         Art art(info[0], info[1], info[2], info[3]);
         artPieces.emplace_back(art, false);
+        sortedArt.insert(art);
     }
 
+    for(auto& c : sortedArt) {
+        std::cout << c << std::endl;
+    }
     delete[] info;
 }
 
@@ -81,6 +85,10 @@ std::ostream &operator<<(ostream& fout, const Museum& museum) {
     }
 
     return fout;
+}
+
+multiset<Art, Museum::LessPrice> &Museum::getSortedArt() {
+    return sortedArt;
 }
 
 

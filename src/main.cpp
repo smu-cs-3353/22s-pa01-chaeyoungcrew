@@ -23,6 +23,10 @@ int main(int argc, char** argv) {
 
         Algorithm a;
         cout << a.bruteForce("../Resources/testBruteForce") << endl;
+<<<<<<< Updated upstream
+=======
+        cout << a.mostExpensiveFirst("../Resources/testBruteForce") << endl;
+>>>>>>> Stashed changes
     }
     return 0;
 }

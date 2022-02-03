@@ -12,6 +12,7 @@
 #include "Art.h"
 #include <map>
 #include <exception>
+#include <set>
 
 
 class Museum {
@@ -21,6 +22,13 @@ private:
 
     // the list of available art pieces
     vector<std::pair<Art, bool>> artPieces;
+
+    struct LessPrice {
+        bool operator() (const Art& lhs,const Art& rhs) const {
+            return lhs.price > rhs.price;
+        }
+    };
+    std::multiset<Art, LessPrice> sortedArt;
 
 public:
     /**
@@ -60,6 +68,16 @@ public:
      */
     Art& getArt(int);
 
+<<<<<<< Updated upstream
+=======
+    /**
+     * returns the list of art sorted by price from greatest to least
+     * @return
+     */
+    std::multiset<Art,LessPrice>& getSortedArt();
+
+
+>>>>>>> Stashed changes
     /**
      * Add an art piece to the wall
      * @param ID the id of the art piece
@@ -70,6 +88,8 @@ public:
      * Clear the wall of all art pieces
      */
     void clearWall();
+
+    /**
 
     /**
      * Overloaded output stream operator
