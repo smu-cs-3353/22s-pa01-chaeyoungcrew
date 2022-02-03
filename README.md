@@ -9,7 +9,7 @@ This project can be run through the command line by moving into the folder conta
 This project requires 1 commend line argument: the path to the input file containing the data for the art and the wall.
 
 ```bash
-$ cd ~22s-pa01-chaeyoungcrew/cmake-build-debug
+$ cd ~/22s-pa01-chaeyoungcrew/cmake-build-debug
 $ ./pa01 Resources/artTest.txt
 ```
 
