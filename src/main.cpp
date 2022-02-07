@@ -21,7 +21,7 @@ int main(int argc, char** argv) {
         cout << m.getWall() << std::endl;
         cout << m.getArt(12) << std::endl;*/
 
-        Algorithm a("../Resources/artTest.txt");
+        Algorithm a(argv[1]);
         cout << "Brute Force: $" << a.bruteForce() << endl;
         cout << "Most Expensive First: $" << a.mostExpensiveFirst() << endl;
 
