@@ -27,13 +27,14 @@ public:
      * Default Constructor
      */
     Algorithm() = default;
+    Algorithm(char*);
 
     /**
      * Calculate all possible walls and return the value of the best wall given an input file
      * @param file the name of the input file
      * @return double
      */
-    double bruteForce(char*);
+    double bruteForce();
 
     /**
      * Create the wall in order from most expensive to least expensive paintings and
@@ -41,7 +42,7 @@ public:
      * @param file the name of the input file
      * @return double
      */
-    double mostExpensiveFirst(char*);
+    double mostExpensiveFirst();
 
 };
 

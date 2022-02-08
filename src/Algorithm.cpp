@@ -8,9 +8,12 @@
 
 #include "Algorithm.h"
 
-double Algorithm::bruteForce(char* file) {
-    // initialize the museum with the given file
+Algorithm::Algorithm(char* file) {
     m.readFile(file);
+}
+
+double Algorithm::bruteForce() {
+    m.clearWall();
 
     // vector of all subsets found through brute force
     vector<Wall> subsets = bfGetSubsets();
@@ -40,7 +43,7 @@ vector<Wall> Algorithm::bfGetSubsets() {
             if ((i & (1 << j)) != 0) {
                 // handle for if the art cannot be added, if it can't, this is an invalid subset so throw it away
                 try { m.addArtIndex(j); }
-                catch (exception& e) { add = false; }
+                catch (exception &e) { add = false; }
             }
         }
         // add the wall to the list of possible walls
@@ -54,12 +57,8 @@ vector<Wall> Algorithm::bfGetSubsets() {
     return subsets;
 }
 
-double Algorithm::mostExpensiveFirst(char *file) {
-    // initialize the museum with the given file
-//    m.readFile(file);
-
+double Algorithm::mostExpensiveFirst() {
     m.clearWall();
-
 
     bool add = true;
     for(auto it = m.getSortedArt().begin(); it != m.getSortedArt().end(); it++) {
