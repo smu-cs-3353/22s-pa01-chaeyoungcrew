@@ -68,3 +68,7 @@ double Algorithm::mostExpensiveFirst() {
     return m.getWall().getCurrentPrice();
 
 }
+
+double Algorithm::heuristicAlgo() {
+    
+}

@@ -30,18 +30,29 @@ private:
     };
     std::multiset<Art, LessPrice> sortedArt;
 
+    // [](Art lhs, Art rhs){return lhs.getValue() < rhs.getValue()}
+    std::multiset<Art, std::function<bool (Art, Art)>> sortedValue;
+
+
 public:
     /**
      * Default Constructor
      */
-    Museum();
+    Museum() : sortedValue ([](Art lhs, Art rhs){return lhs.getValue() < rhs.getValue();})
+    {
+        wall = new Wall();
+    }
+
 
     /**
      * Overloaded Constructor
      * @param w the width of the wall
      * @param h the height of the wall
      */
-    Museum(int, int);
+    Museum(int w, int h) : sortedValue([](Art lhs, Art rhs){return lhs.getValue() < rhs.getValue();})
+    {
+        wall = new Wall(w, h);
+    }
 
     /**
      * Populate the list of art pieces given an input file
@@ -73,6 +84,13 @@ public:
      * @return
      */
     std::multiset<Art,LessPrice>& getSortedArt();
+
+    /**
+     * returns the lst of art sorted by value per unit of width
+     * from greatest of least
+     * @return
+     */
+     std::multiset<Art, std::function<bool (Art, Art)>>& getSortedValue();
 
 
     /**

@@ -20,6 +20,7 @@ private:
 public:
     int price;
     int pictureID;
+    double value;
     /**
      * Default Constructor
      */
@@ -57,7 +58,13 @@ public:
       * Get the price of the art piece
       * @return double
       */
-     double getPrice() const;
+     int getPrice() const;
+
+     /**
+      * Get the value of the art piece
+      * @return int
+      */
+      double getValue() const;
 
      /**
       * Set the height of the art piece

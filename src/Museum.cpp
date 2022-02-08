@@ -4,13 +4,15 @@
 
 #include "Museum.h"
 
-Museum::Museum() {
-    wall = new Wall();
-}
-
-Museum::Museum(int w, int h) {
-    wall = new Wall(w, h);
-}
+//Museum::Museum() {
+//    wall = new Wall();
+//    sortedValue = [](Art lhs, Art rhs){return lhs.getValue() < rhs.getValue(); }
+//
+//}
+//
+//Museum::Museum(int w, int h) {
+//    wall = new Wall(w, h);
+//}
 
 void Museum::readFile(char *filename) {
     ifstream artFile;
@@ -38,6 +40,7 @@ void Museum::readFile(char *filename) {
         Art art(info[0], info[1], info[2], info[3]);
         artPieces.emplace_back(art, false);
         sortedArt.insert(art);
+        sortedValue.insert(art);
     }
 
     for(auto& c : sortedArt) {
@@ -97,5 +100,11 @@ std::ostream &operator<<(ostream& fout, const Museum& museum) {
 multiset<Art, Museum::LessPrice> &Museum::getSortedArt() {
     return sortedArt;
 }
+
+std::multiset<Art, std::function<bool(Art, Art)>> &Museum::getSortedValue() {
+    return sortedValue;
+}
+
+
 
 

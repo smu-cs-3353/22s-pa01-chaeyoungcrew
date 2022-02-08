@@ -39,10 +39,16 @@ public:
     /**
      * Create the wall in order from most expensive to least expensive paintings and
      * return the value given an input file
-     * @param file the name of the input file
      * @return double
      */
     double mostExpensiveFirst();
+
+    /**
+     * Create the wall using a heuristic algorithm that orders
+     * the paintings based on their total value, calculated with
+     * price/width
+     */
+    double heuristicAlgo();
 
 };
 

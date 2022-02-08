@@ -15,12 +15,13 @@ Art::Art(int ID, double price, int width, int height) {
     this->width = width;
     this->pictureID = ID;
     this->price = price;
+    this->value = price/width;
 }
 
 int Art::getHeight() const { return this->height; }
 int Art::getWidth() const { return this->width; }
 int Art::getID() const { return this->pictureID; }
-double Art::getPrice() const { return this->price; }
+int Art::getPrice() const { return this->price; }
 
 void Art::setHeight(int height) { this->height = height; }
 void Art::setWidth(int width) { this->width = width; }
@@ -42,4 +43,8 @@ bool Art::operator>(const Art& other) const {
 std::ostream& operator<<(std::ostream& fout, const Art& art) {
     fout<< "id: " << art.pictureID << ", $" << art.price << ", " << art.width << "x" << art.height;
     return fout;
+}
+
+double Art::getValue() const {
+    return value;
 }
