@@ -111,8 +111,6 @@ public:
     void clearWall();
 
     /**
-
-    /**
      * Overloaded output stream operator
      * @return std::ostream
      */

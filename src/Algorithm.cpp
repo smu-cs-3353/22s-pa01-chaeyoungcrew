@@ -70,5 +70,11 @@ double Algorithm::mostExpensiveFirst() {
 }
 
 double Algorithm::heuristicAlgo() {
-    
+    m.clearWall();
+
+    for(auto it = m.getSortedValue().begin(); it != m.getSortedValue().end(); it++) {
+        try {m.addArt(it->pictureID); }
+        catch(exception& e) {continue;}
+    }
+    return m.getWall().getCurrentPrice();
 }
