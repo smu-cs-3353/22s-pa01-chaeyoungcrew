@@ -15,11 +15,12 @@ Algorithm::Algorithm(char* file) {
 double Algorithm::bruteForce() {
     m.clearWall();
 
+
     // vector of all subsets found through brute force
     vector<Wall> subsets = bfGetSubsets();
 
     // loop through list of subsets and find the one with the maximum value
-    double max = -DBL_MAX;
+    double max = 0;
     for (int i = 0; i < subsets.size(); i++) {
         if (subsets.at(i).getCurrentPrice() > max)
             max = subsets.at(i).getCurrentPrice();
@@ -31,6 +32,8 @@ vector<Wall> Algorithm::bfGetSubsets() {
     // trackers for the loops
     int size = m.getList().size();
     int big = pow(2, size);
+
+    int numSets = 0;
 
     // create all possible subsets
     vector<Wall> subsets;
@@ -53,7 +56,11 @@ vector<Wall> Algorithm::bfGetSubsets() {
         }
         // clear the working object for a new subset
         m.clearWall();
+//        numSets++;
+//        if(numSets % 1000 == 0)
+//            std::cout << numSets << std::endl;
     }
+
     return subsets;
 }
 

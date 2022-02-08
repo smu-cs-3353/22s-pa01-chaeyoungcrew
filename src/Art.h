@@ -34,7 +34,7 @@ public:
      * @param width the width of the art piece
      * @param height the height of the art piece
      */
-    Art(int, double, int, int);
+    Art(int, int, int, int);
 
     /**
      * Get the height of the art piece

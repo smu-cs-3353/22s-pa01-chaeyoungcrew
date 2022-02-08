@@ -4,16 +4,6 @@
 
 #include "Museum.h"
 
-//Museum::Museum() {
-//    wall = new Wall();
-//    sortedValue = [](Art lhs, Art rhs){return lhs.getValue() < rhs.getValue(); }
-//
-//}
-//
-//Museum::Museum(int w, int h) {
-//    wall = new Wall(w, h);
-//}
-
 void Museum::readFile(char *filename) {
     ifstream artFile;
     artFile.open(filename);
@@ -27,6 +17,8 @@ void Museum::readFile(char *filename) {
     artFile >> temp;
     wall->setHeight(temp);
 
+    int total = 0;
+
     string buffer;
 
     artFile >> temp;
@@ -37,15 +29,26 @@ void Museum::readFile(char *filename) {
         artFile >> info[2];
         artFile >> info[3];
 
+        total += info[2];
+
         Art art(info[0], info[1], info[2], info[3]);
         artPieces.emplace_back(art, false);
         sortedArt.insert(art);
         sortedValue.insert(art);
     }
 
+    std::cout << "total width" << total << std::endl;
+
+    std::cout << "Sorted Art by price" << std::endl;
     for(auto& c : sortedArt) {
         std::cout << c << std::endl;
     }
+
+    std::cout << "Sorted Art by value" << std::endl;
+    for(auto& c : sortedValue) {
+        std::cout << c << std::endl;
+    }
+
     delete[] info;
 }
 
@@ -97,7 +100,7 @@ std::ostream &operator<<(ostream& fout, const Museum& museum) {
     return fout;
 }
 
-multiset<Art, Museum::LessPrice> &Museum::getSortedArt() {
+multiset<Art, std::function<bool(Art, Art)>> &Museum::getSortedArt() {
     return sortedArt;
 }
 

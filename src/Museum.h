@@ -23,14 +23,8 @@ private:
     // the list of available art pieces
     vector<std::pair<Art, bool>> artPieces;
 
-    struct LessPrice {
-        bool operator() (const Art& lhs,const Art& rhs) const {
-            return lhs.price > rhs.price;
-        }
-    };
-    std::multiset<Art, LessPrice> sortedArt;
-
-    // [](Art lhs, Art rhs){return lhs.getValue() < rhs.getValue()}
+    // the list of art pieces sorted by price and value
+    std::multiset<Art, std::function<bool(Art, Art)>> sortedArt;
     std::multiset<Art, std::function<bool (Art, Art)>> sortedValue;
 
 
@@ -38,7 +32,8 @@ public:
     /**
      * Default Constructor
      */
-    Museum() : sortedValue ([](Art lhs, Art rhs){return lhs.getValue() < rhs.getValue();})
+    Museum() : sortedValue ([](Art lhs, Art rhs){return lhs.getValue() > rhs.getValue();})
+             , sortedArt ([](Art lhs, Art rhs){return lhs.getPrice() > rhs.getPrice();})
     {
         wall = new Wall();
     }
@@ -50,6 +45,7 @@ public:
      * @param h the height of the wall
      */
     Museum(int w, int h) : sortedValue([](Art lhs, Art rhs){return lhs.getValue() < rhs.getValue();})
+                         , sortedArt ([](Art lhs, Art rhs){return lhs.getPrice() > rhs.getPrice();})
     {
         wall = new Wall(w, h);
     }
@@ -83,7 +79,7 @@ public:
      * returns the list of art sorted by price from greatest to least
      * @return
      */
-    std::multiset<Art,LessPrice>& getSortedArt();
+    std::multiset<Art, std::function<bool (Art, Art)>>& getSortedArt();
 
     /**
      * returns the lst of art sorted by value per unit of width

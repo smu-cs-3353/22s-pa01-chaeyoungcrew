@@ -13,8 +13,9 @@ int main(int argc, char** argv) {
         cout << "No arguments provided." << endl;
     else {
         Algorithm a(argv[1]);
-        cout << "Brute Force: $" << a.bruteForce() << endl;
+        cout << "Brute Force:          $" << a.bruteForce() << endl;
         cout << "Most Expensive First: $" << a.mostExpensiveFirst() << endl;
+        cout << "Heuristic :           $" << a.heuristicAlgo() << endl;
     }
     return 0;
 }
