@@ -4,7 +4,6 @@
 // Working Comments: The brute force algorithm is finished, but it currently
 // only works if the IDs start at 0, and have every integer up to the size.
 // Maybe change it so that accessing the Art can be by ID or by location in the vector?
-//
 
 #include "Algorithm.h"
 
@@ -14,7 +13,6 @@ Algorithm::Algorithm(char* file) {
 
 double Algorithm::bruteForce() {
     m.clearWall();
-
 
     // vector of all subsets found through brute force
     vector<Wall> subsets = bfGetSubsets();
@@ -32,8 +30,6 @@ vector<Wall> Algorithm::bfGetSubsets() {
     // trackers for the loops
     int size = m.getList().size();
     int big = pow(2, size);
-
-    int numSets = 0;
 
     // create all possible subsets
     vector<Wall> subsets;
@@ -56,9 +52,6 @@ vector<Wall> Algorithm::bfGetSubsets() {
         }
         // clear the working object for a new subset
         m.clearWall();
-//        numSets++;
-//        if(numSets % 1000 == 0)
-//            std::cout << numSets << std::endl;
     }
 
     return subsets;
@@ -67,7 +60,6 @@ vector<Wall> Algorithm::bfGetSubsets() {
 double Algorithm::mostExpensiveFirst() {
     m.clearWall();
 
-    bool add = true;
     for(auto it = m.getSortedArt().begin(); it != m.getSortedArt().end(); it++) {
         try {m.addArt(it->pictureID); }
         catch(exception& e) {continue;}

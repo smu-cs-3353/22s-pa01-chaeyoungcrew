@@ -15,7 +15,7 @@ int main(int argc, char** argv) {
         Algorithm a(argv[1]);
         cout << "Brute Force:          $" << a.bruteForce() << endl;
         cout << "Most Expensive First: $" << a.mostExpensiveFirst() << endl;
-        cout << "Heuristic :           $" << a.heuristicAlgo() << endl;
+        cout << "Heuristic:            $" << a.heuristicAlgo() << endl;
     }
     return 0;
 }
