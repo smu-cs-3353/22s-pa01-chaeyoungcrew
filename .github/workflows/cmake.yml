@@ -13,9 +13,9 @@ env:
   RUN_EXE: pa01
   TEST_EXE: pa01_test
   # the name of any input files (use relative path)
-  INPUT_FILE: Resources/artTest.txt
+  INPUT_FILE: Resources/longTest.txt
   # the name of any output files (use relative paths)
-  OUTPUT_FILE: data/output.txt
+  OUTPUT_FILE: Resources/output.txt
 
 
 jobs:
