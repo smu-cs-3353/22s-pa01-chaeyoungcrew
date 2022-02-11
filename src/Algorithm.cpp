@@ -4,7 +4,6 @@
 // Working Comments: The brute force algorithm is finished, but it currently
 // only works if the IDs start at 0, and have every integer up to the size.
 // Maybe change it so that accessing the Art can be by ID or by location in the vector?
-//
 
 #include "Algorithm.h"
 
@@ -19,7 +18,7 @@ double Algorithm::bruteForce() {
     vector<Wall> subsets = bfGetSubsets();
 
     // loop through list of subsets and find the one with the maximum value
-    double max = -DBL_MAX;
+    double max = 0;
     for (int i = 0; i < subsets.size(); i++) {
         if (subsets.at(i).getCurrentPrice() > max)
             max = subsets.at(i).getCurrentPrice();
@@ -54,13 +53,13 @@ vector<Wall> Algorithm::bfGetSubsets() {
         // clear the working object for a new subset
         m.clearWall();
     }
+
     return subsets;
 }
 
 double Algorithm::mostExpensiveFirst() {
     m.clearWall();
 
-    bool add = true;
     for(auto it = m.getSortedArt().begin(); it != m.getSortedArt().end(); it++) {
         try {m.addArt(it->pictureID); }
         catch(exception& e) {continue;}
@@ -70,5 +69,11 @@ double Algorithm::mostExpensiveFirst() {
 }
 
 double Algorithm::heuristicAlgo() {
-    
+    m.clearWall();
+
+    for(auto it = m.getSortedValue().begin(); it != m.getSortedValue().end(); it++) {
+        try {m.addArt(it->pictureID); }
+        catch(exception& e) {continue;}
+    }
+    return m.getWall().getCurrentPrice();
 }

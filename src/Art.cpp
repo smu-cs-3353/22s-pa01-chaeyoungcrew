@@ -3,6 +3,7 @@
 //
 
 #include "Art.h"
+#include <iomanip>
 
 Art::Art() {
     this->height = 1;
@@ -10,12 +11,12 @@ Art::Art() {
     this->price = 1;
 }
 
-Art::Art(int ID, double price, int width, int height) {
+Art::Art(int ID, int price, int width, int height) {
     this->height = height;
     this->width = width;
     this->pictureID = ID;
     this->price = price;
-    this->value = price/width;
+    this->value = ((double)price)/width;
 }
 
 int Art::getHeight() const { return this->height; }
@@ -41,7 +42,8 @@ bool Art::operator>(const Art& other) const {
 }
 
 std::ostream& operator<<(std::ostream& fout, const Art& art) {
-    fout<< "id: " << art.pictureID << ", $" << art.price << ", " << art.width << "x" << art.height;
+    fout<< "id: " << art.pictureID << ", $" << art.price << ", $" << std::fixed << std::setprecision(2)
+    << art.value << ", " << art.width << "x" << art.height;
     return fout;
 }
 
