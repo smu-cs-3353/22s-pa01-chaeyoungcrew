@@ -11,11 +11,11 @@ Algorithm::Algorithm(char* file) {
     m.readFile(file);
 }
 
-double Algorithm::bruteForce() {
+double Algorithm::bruteForce(int size = -1) {
     m.clearWall();
 
     // vector of all subsets found through brute force
-    vector<Wall> subsets = bfGetSubsets();
+    vector<Wall> subsets = bfGetSubsets(size);
 
     // loop through list of subsets and find the one with the maximum value
     double max = 0;
@@ -26,9 +26,12 @@ double Algorithm::bruteForce() {
     return max;
 }
 
-vector<Wall> Algorithm::bfGetSubsets() {
+vector<Wall> Algorithm::bfGetSubsets(int size) {
     // trackers for the loops
-    int size = m.getList().size();
+    if (size == -1)
+        size = m.getList().size();
+    else if (size > m.getList().size())
+        size = m.getList().size();
     int big = pow(2, size);
 
     // create all possible subsets

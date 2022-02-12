@@ -19,9 +19,10 @@ private:
 
     /**
      * Helper method for bruteForce algorithm
+     * @param int the number of art pieces to process
      * @return vector<Wall>
      */
-    vector<Wall> bfGetSubsets();
+    vector<Wall> bfGetSubsets(int);
 public:
     /**
      * Default Constructor
@@ -31,10 +32,10 @@ public:
 
     /**
      * Calculate all possible walls and return the value of the best wall given an input file
-     * @param file the name of the input file
+     * @param int the number of art pieces to process, default to size of the list
      * @return double
      */
-    double bruteForce();
+    double bruteForce(int);
 
     /**
      * Create the wall in order from most expensive to least expensive paintings and
