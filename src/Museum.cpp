@@ -37,17 +37,17 @@ void Museum::readFile(char *filename) {
         sortedValue.insert(art);
     }
 
-    std::cout << "total width" << total << std::endl;
+//    std::cout << "total width " << total/2 << std::endl;
 
-    std::cout << "Sorted Art by price" << std::endl;
-    for(auto& c : sortedArt) {
-        std::cout << c << std::endl;
-    }
-
-    std::cout << "Sorted Art by value" << std::endl;
-    for(auto& c : sortedValue) {
-        std::cout << c << std::endl;
-    }
+//    std::cout << "Sorted Art by price" << std::endl;
+//    for(auto& c : sortedArt) {
+//        std::cout << c << std::endl;
+//    }
+//
+//    std::cout << "Sorted Art by value" << std::endl;
+//    for(auto& c : sortedValue) {
+//        std::cout << c << std::endl;
+//    }
 
     delete[] info;
 }

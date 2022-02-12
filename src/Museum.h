@@ -1,7 +1,3 @@
-//
-// Created by Daniel Ryan on 1/25/22.
-//
-
 #ifndef INC_22S_PA01_MUSEUM_H
 #define INC_22S_PA01_MUSEUM_H
 

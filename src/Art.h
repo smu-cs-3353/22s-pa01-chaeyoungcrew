@@ -88,7 +88,7 @@ public:
        * Set the price of the art piece
        * @param price the price of the art piece
        */
-      void setPrice(double);
+      void setPrice(int);
 
       /**
        * Comparators

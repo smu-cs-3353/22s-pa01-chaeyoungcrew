@@ -22,7 +22,7 @@ private:
     int currentWidth;
 
     // current price of all paintings on the wall
-    double currentPrice;
+    int currentPrice;
 
     // linked list of art pieces on the wall
     DSLinkedList<Art> pieces;
@@ -55,7 +55,7 @@ public:
      * Get the width of the wall
      * @return int
      */
-    int getWidth();
+    int getWidth() const;
 
     /**
      * Set the width of the wall
@@ -67,7 +67,7 @@ public:
      * Get the height of the wall
      * @return int
      */
-    int getHeight();
+    int getHeight() const;
 
     /**
      * Set the height of the wall
@@ -79,7 +79,7 @@ public:
      * Get the current width of the art on the wall
      * @return int
      */
-    int getCurrentWidth();
+    int getCurrentWidth() const;
 
     /**
      * Set the current width of the art on the wall
@@ -91,7 +91,7 @@ public:
      * Get the current price of the art on the wall
      * @return double
      */
-    double getCurrentPrice();
+    int getCurrentPrice() const;
 
     /**
      * Set the current price of the art on the wall

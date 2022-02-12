@@ -10,7 +10,7 @@ This project requires 1 commend line argument: the path to the input file contai
 
 ```bash
 $ cd ~/22s-pa01-chaeyoungcrew/cmake-build-debug
-$ ./pa01 Resources/artTest.txt
+$ ./pa01 Resources/longTest.txt
 ```
 
 ## Usage

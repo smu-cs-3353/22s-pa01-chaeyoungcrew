@@ -1,9 +1,6 @@
 //
 // Created by Daniel Ryan on 1/25/22.
 //
-// Working Comments: The brute force algorithm is finished, but it currently
-// only works if the IDs start at 0, and have every integer up to the size.
-// Maybe change it so that accessing the Art can be by ID or by location in the vector?
 
 #include "Algorithm.h"
 
@@ -18,7 +15,7 @@ double Algorithm::bruteForce(int size) {
     vector<Wall> subsets = bfGetSubsets(size);
 
     // loop through list of subsets and find the one with the maximum value
-    double max = 0;
+    int max = 0;
     for (int i = 0; i < subsets.size(); i++) {
         if (subsets.at(i).getCurrentPrice() > max)
             max = subsets.at(i).getCurrentPrice();
@@ -36,6 +33,11 @@ vector<Wall> Algorithm::bfGetSubsets(int size) {
 
     // create all possible subsets
     vector<Wall> subsets;
+
+    // terminates if size is too large and im not patient enough to wait
+    if(size > 13)
+        return subsets;
+
     for (int i = 0; i < big; i++) {
         // boolean variable to handle for invalid subsets
         bool add = true;

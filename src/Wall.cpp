@@ -40,13 +40,13 @@ void Wall::removeArt(Art& art) {
     currentPrice -= art.getPrice();
 }
 
-int Wall::getWidth() { return this->width; }
+int Wall::getWidth() const { return this->width; }
 void Wall::setWidth(int w) { this->width = w; }
-int Wall::getHeight() { return this->height; }
+int Wall::getHeight() const { return this->height; }
 void Wall::setHeight(int h) { this->height = h; }
-int Wall::getCurrentWidth() { return this->currentWidth; }
+int Wall::getCurrentWidth() const { return this->currentWidth; }
 void Wall::setCurrentWidth(int w) { this->currentWidth = w; }
-double Wall::getCurrentPrice() { return this->currentPrice; }
+int Wall::getCurrentPrice() const { return this->currentPrice; }
 void Wall::setCurrentPrice(double p) { this->currentPrice = p; }
 
 std::ostream &operator<<(ostream& fout, const Wall& wall) {

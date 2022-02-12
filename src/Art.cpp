@@ -24,10 +24,10 @@ int Art::getWidth() const { return this->width; }
 int Art::getID() const { return this->pictureID; }
 int Art::getPrice() const { return this->price; }
 
-void Art::setHeight(int height) { this->height = height; }
-void Art::setWidth(int width) { this->width = width; }
+void Art::setHeight(int h) { this->height = h; }
+void Art::setWidth(int w) { this->width = w; }
 void Art::setID(int ID) { this->pictureID = ID; }
-void Art::setPrice(double price) { this->price = price; }
+void Art::setPrice(int p) { this->price = p; }
 
 bool Art::operator==(const Art& other) const {
     return this->height == other.getHeight() && this->width == other.getWidth() && this->price == other.getPrice();

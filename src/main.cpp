@@ -16,9 +16,14 @@ int main(int argc, char** argv) {
         cout << "Brute Force:          $" << a.bruteForce() << endl;
         cout << "Most Expensive First: $" << a.mostExpensiveFirst() << endl;
         cout << "Heuristic:            $" << a.heuristicAlgo() << endl;
-        bool loop = true;
+        bool loop = false;
         while (loop) {
-            cout << "Options:\n[1] brute force\n[2] most expensive first\n[3] heuristic\n[*] any key to quit\nMake a choice: " << endl;
+            cout << "Options:\n"
+                    "[1] brute force\n"
+                    "[2] most expensive first\n"
+                    "[3] heuristic\n"
+                    "[*] any key to quit\n"
+                    "Make a choice: " << endl;
             int choice;
             cin >> choice;
             switch (choice) {
