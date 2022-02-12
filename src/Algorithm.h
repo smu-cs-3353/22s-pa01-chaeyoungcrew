@@ -35,7 +35,7 @@ public:
      * @param int the number of art pieces to process, default to size of the list
      * @return double
      */
-    double bruteForce(int);
+    double bruteForce(int size = -1);
 
     /**
      * Create the wall in order from most expensive to least expensive paintings and

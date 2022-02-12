@@ -11,7 +11,7 @@ Algorithm::Algorithm(char* file) {
     m.readFile(file);
 }
 
-double Algorithm::bruteForce(int size = -1) {
+double Algorithm::bruteForce(int size) {
     m.clearWall();
 
     // vector of all subsets found through brute force
