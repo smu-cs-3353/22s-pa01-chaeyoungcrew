@@ -353,7 +353,7 @@ std::ostream& operator<<(std::ostream& fout, const DSLinkedList<T>& l) {
     while (temp != nullptr) {
         fout << temp->data;
         if (temp->next != nullptr)
-            fout << " -> ";
+            fout << std::endl;
         temp = temp->next;
     }
     return fout;

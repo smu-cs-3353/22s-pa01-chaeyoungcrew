@@ -9,6 +9,7 @@ Wall::Wall() {
     this->width = 1;
     this->currentWidth = 0;
     this->currentPrice = 0;
+    numArt = 0;
 }
 
 Wall::Wall(int height, int width) {
@@ -27,6 +28,7 @@ void Wall::addArt(Art& art) {
     pieces.push_back(art);
     currentWidth += art.getWidth();
     currentPrice += art.getPrice();
+    numArt++;
 }
 
 void Wall::removeArt(Art& art) {
@@ -38,6 +40,7 @@ void Wall::removeArt(Art& art) {
     pieces.remove(art);
     currentWidth -= art.getWidth();
     currentPrice -= art.getPrice();
+    numArt--;
 }
 
 int Wall::getWidth() const { return this->width; }
@@ -48,9 +51,19 @@ int Wall::getCurrentWidth() const { return this->currentWidth; }
 void Wall::setCurrentWidth(int w) { this->currentWidth = w; }
 int Wall::getCurrentPrice() const { return this->currentPrice; }
 void Wall::setCurrentPrice(double p) { this->currentPrice = p; }
+int Wall::getNumArt() { return this->numArt; }
 
 std::ostream &operator<<(ostream& fout, const Wall& wall) {
-    fout << "WxH: " << wall.width << "x" << wall.height << ", current width: " << wall.currentWidth <<
-        ", price: " << wall.currentPrice << ", pieces: " << wall.pieces;
+//    fout << wall.width << "x" << wall.height << ", current width: " << wall.currentWidth <<
+//        ", price: " << wall.currentPrice << ", pieces: " << wall.pieces;
+
+    fout << wall.pieces;
     return fout;
+}
+
+void Wall::clearWall() {
+    currentWidth = 0;
+    currentPrice = 0;
+    numArt = 0;
+    pieces.clear();
 }

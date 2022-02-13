@@ -6,6 +6,7 @@
 
 Algorithm::Algorithm(char* file) {
     m.readFile(file);
+    fileName = file;
 }
 
 double Algorithm::bruteForce(int size) {
@@ -16,10 +17,16 @@ double Algorithm::bruteForce(int size) {
 
     // loop through list of subsets and find the one with the maximum value
     int max = 0;
+    int maxIndex = 0;
+    Wall maxWall;
     for (int i = 0; i < subsets.size(); i++) {
-        if (subsets.at(i).getCurrentPrice() > max)
+        if (subsets.at(i).getCurrentPrice() > max) {
             max = subsets.at(i).getCurrentPrice();
+            maxIndex = i;
+        }
     }
+
+    std::cout << subsets.at(maxIndex-1).getNumArt() << " " << subsets.at(maxIndex-1).getCurrentWidth()<< std::endl;
     return max;
 }
 
@@ -69,6 +76,9 @@ double Algorithm::mostExpensiveFirst() {
         try {m.addArt(it->pictureID); }
         catch(exception& e) {continue;}
     }
+
+    outputFiles(m.getWall(), m.getWall().getCurrentPrice(), 'e');
+
     return m.getWall().getCurrentPrice();
 
 }
@@ -80,5 +90,31 @@ double Algorithm::heuristicAlgo() {
         try {m.addArt(it->pictureID); }
         catch(exception& e) {continue;}
     }
+    outputFiles(m.getWall(), m.getWall().getCurrentPrice(), 'h');
+
     return m.getWall().getCurrentPrice();
+}
+
+void Algorithm::outputFiles(const Wall& wall, int price, char algo) {
+    string ofileName;
+    switch(algo) {
+        case 'b':
+            ofileName = fileName.substr(0, fileName.size()-4) + "-bruteforce.txt";
+            break;
+        case 'e':
+            ofileName = fileName.substr(0, fileName.size()-4) + "-highvalue.txt";
+            break;
+        case 'h':
+            ofileName = fileName.substr(0, fileName.size()-4) + "-custom.txt";
+            break;
+        default:
+            break;
+    }
+    ofstream of(ofileName.c_str());
+    if(of.is_open()) {
+        of << price << std::endl;
+        of << wall << std::endl;
+    }
+
+    of.close();
 }

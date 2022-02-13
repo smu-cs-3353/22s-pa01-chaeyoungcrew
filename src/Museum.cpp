@@ -86,8 +86,7 @@ void Museum::addArtIndex(int i) {
 }
 
 void Museum::clearWall() {
-    wall->setCurrentWidth(0);
-    wall->setCurrentPrice(0.0);
+    wall->clearWall();
 }
 
 std::ostream &operator<<(ostream& fout, const Museum& museum) {

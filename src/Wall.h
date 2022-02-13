@@ -26,6 +26,8 @@ private:
 
     // linked list of art pieces on the wall
     DSLinkedList<Art> pieces;
+
+    int numArt;
 public:
     /**
      * Default Constructor
@@ -104,6 +106,10 @@ public:
      * @return std::ostream
      */
     friend std::ostream& operator<<(std::ostream&, const Wall&);
+
+    int getNumArt();
+
+    void clearWall();
 };
 
 #endif //INC_22S_PA01_WALL_H

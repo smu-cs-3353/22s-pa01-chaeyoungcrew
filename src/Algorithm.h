@@ -17,6 +17,8 @@ private:
     // The museum
     Museum m;
 
+    string fileName;
+
     /**
      * Helper method for bruteForce algorithm
      * @param int the number of art pieces to process
@@ -50,6 +52,14 @@ public:
      * price/width
      */
     double heuristicAlgo();
+
+    /**
+     * Creates the output file for the particular algorithm
+     * @param wall the wall resulted from the algorithm
+     * @param price the ending price of the art on the wall
+     * @param algo the type of algorithm to be processed [b,e,h]
+     */
+     void outputFiles(const Wall&, int, char);
 
 };
 

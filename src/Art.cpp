@@ -41,12 +41,12 @@ bool Art::operator>(const Art& other) const {
     return this->height*this->width > other.getHeight()*other.getWidth();
 }
 
-std::ostream& operator<<(std::ostream& fout, const Art& art) {
-    fout<< "id: " << art.pictureID << ", $" << art.price << ", $" << std::fixed << std::setprecision(2)
-    << art.value << ", " << art.width << "x" << art.height;
-    return fout;
-}
-
 double Art::getValue() const {
     return value;
 }
+
+std::ostream& operator<<(std::ostream& fout, const Art& art) {
+    fout<< art.pictureID << " " << art.price << " " << art.width << " " << art.height;
+    return fout;
+}
+
