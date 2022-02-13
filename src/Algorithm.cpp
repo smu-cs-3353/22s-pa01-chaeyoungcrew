@@ -25,7 +25,8 @@ double Algorithm::bruteForce(int size) {
         }
     }
 
-    outputFiles(subsets.at(maxIndex), max, 'b');
+    if (subsets.size() > 0)
+        outputFiles(subsets.at(maxIndex), max, 'b');
     return max;
 }
 
