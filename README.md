@@ -1,6 +1,6 @@
 # 🖼Art is Fun!
 
-Art is Fun! is a C++ project that calculates the most valuable collection of paintings that will fit along a centered position on a wall. This is achieved by use of 3 different algorithms: brute force, most expensive first, and a heuristic algorithm, which in this case orders art pieces by how valuable they are (price divided by width).
+Art is Fun! is a C++ project that calculates the most valuable collection of paintings that will fit along a centered position on a wall. This is achieved by use of 3 different algorithms: brute force (finding all possible subsets and selecting the most valuable one), most expensive first (sorting the art pieces by their price and putting them on the wall from highest to lowest), and a heuristic algorithm, which in this case orders art pieces by how valuable they are (price divided by width).
 
 ## Installation
 

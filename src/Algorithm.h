@@ -24,20 +24,21 @@ private:
      * @param int the number of art pieces to process
      * @return vector<Wall>
      */
-    vector<Wall> bfGetSubsets(int);
+    vector<Wall> bfGetSubsets();
 public:
     /**
      * Default Constructor
      */
     Algorithm() = default;
     Algorithm(char*);
+    Algorithm(char*, int);
 
     /**
      * Calculate all possible walls and return the value of the best wall given an input file
      * @param int the number of art pieces to process, default to size of the list
      * @return double
      */
-    double bruteForce(int size = -1);
+    double bruteForce();
 
     /**
      * Create the wall in order from most expensive to least expensive paintings and

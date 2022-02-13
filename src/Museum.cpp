@@ -4,7 +4,7 @@
 
 #include "Museum.h"
 
-void Museum::readFile(char *filename) {
+void Museum::readFile(char *filename, int size) {
     ifstream artFile;
     artFile.open(filename);
 
@@ -21,6 +21,8 @@ void Museum::readFile(char *filename) {
     string buffer;
 
     artFile >> temp;
+    if (size != 0)
+        temp = min(temp, size);
     int* info = new int[4];
     for(int i = 0; i < temp; i++) {
 

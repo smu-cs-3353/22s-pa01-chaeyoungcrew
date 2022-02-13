@@ -51,7 +51,7 @@ public:
      * Populate the list of art pieces given an input file
      * @param filename the name of the input file
      */
-    void readFile(char* filename);
+    void readFile(char* filename, int size = 0);
 
     /**
      * Get the wall
