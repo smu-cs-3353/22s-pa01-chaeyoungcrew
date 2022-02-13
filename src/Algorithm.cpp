@@ -44,7 +44,7 @@ vector<Wall> Algorithm::bfGetSubsets() {
     vector<Wall> subsets;
 
     // terminates if size is too large and im not patient enough to wait
-    if(size > 13)
+    if(size > 22)
         return subsets;
 
     for (int i = 0; i < big; i++) {

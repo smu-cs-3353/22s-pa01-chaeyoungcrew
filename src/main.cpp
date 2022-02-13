@@ -3,7 +3,8 @@
 //
 
 #include <iostream>
-#include "Museum.h"
+#include <iomanip>
+#include <chrono>
 #include "Algorithm.h"
 
 using namespace std;
@@ -12,10 +13,33 @@ int main(int argc, char** argv) {
     if (argc == 1)
         cout << "No arguments provided." << endl;
     else {
-        Algorithm a(argv[1]);
-        cout << "Brute Force:          $" << a.bruteForce() << endl;
-        cout << "Most Expensive First: $" << a.mostExpensiveFirst() << endl;
-        cout << "Heuristic:            $" << a.heuristicAlgo() << endl;
+        ofstream data("Resources/data.csv");
+        data << fixed << setprecision(5) << "Num,Brute,Expensive,Heuristic" << endl;
+        cout << fixed << setprecision(5);
+        for (int i = 1; i < 1000; i++) {
+            Algorithm a(argv[1], i);
+            data << i << ",";
+
+            chrono::high_resolution_clock::time_point t1 = chrono::high_resolution_clock::now();
+            cout << "Brute Force:          $" << a.bruteForce() << endl;
+            chrono::high_resolution_clock::time_point t2 = chrono::high_resolution_clock::now();
+            chrono::duration<double> bruteTime = t2 - t1;
+            cout << "Time: " << bruteTime.count() << " seconds." << endl;
+            data << bruteTime.count() << ",";
+
+            cout << "Most Expensive First: $" << a.mostExpensiveFirst() << endl;
+            t1 = chrono::high_resolution_clock::now();
+            chrono::duration<double> expensiveTime = t1 - t2;
+            cout << "Time: " << expensiveTime.count() << " seconds." << endl;
+            data << expensiveTime.count() << ",";
+
+            cout << "Heuristic:            $" << a.heuristicAlgo() << endl;
+            t2 = chrono::high_resolution_clock::now();
+            chrono::duration<double> heuristicTime = t2 - t1;
+            cout << "Time: " << heuristicTime.count() << " seconds." << endl;
+            data << heuristicTime.count() << endl;
+        }
+        data.close();
 
 
         //code for toggleable menu for data collection
