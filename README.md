@@ -1,19 +1,34 @@
 # 🖼Art is Fun!
 
-Art is Fun! is a C++ project that calculates the most valuable collection of paintings that will fit along a centered position on a wall. This is achieved by use of 3 different algorithms: brute force, most expensive first, and most efficient.
+Art is Fun! is a C++ project that calculates the most valuable collection of paintings that will fit along a centered position on a wall. This is achieved by use of 3 different algorithms: brute force, most expensive first, and a heuristic algorithm, which in this case orders art pieces by how valuable they are (price divided by width).
 
 ## Installation
 
-This project can be run through the command line by moving into the folder containing the executable, and running the project.
+This project can be run in the commandline via g++, or by compiling in CLion using the CMakeLists.txt file with your chosen compiler. Below I will show you how to install g++. 
 
-This project requires 1 commend line argument: the path to the input file containing the data for the art and the wall.
-
+First, check if g++ is installed. 
 ```bash
-$ cd ~/22s-pa01-chaeyoungcrew/cmake-build-debug
-$ ./pa01 Resources/longTest.txt
+$ g++ --version
+```
+If it is not installed, install it. 
+```bash
+$ sudo apt-get install g++
 ```
 
 ## Usage
+
+First, navigate to the project directory.
+```bash
+$ cd FullFilePathHere
+```
+Next, compile all of the relevant files using g++
+```bash
+$ g++ src/main.cpp src.Art.cpp src/Wall.cpp src/DSLinkedList.h src/Museum.cpp src.Algorithm.cpp
+```
+Run the program
+```bash
+$ ./a.out data/inputFileHere.txt
+```
 
 ## Credits
 This project was completed entirely by Zach Suzuki and Daniel Ryan for CS3353, Fundamentals of Algorithms taught by Dr. Fontenot.
