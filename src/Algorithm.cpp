@@ -26,7 +26,7 @@ double Algorithm::bruteForce(int size) {
         }
     }
 
-    std::cout << subsets.at(maxIndex-1).getNumArt() << " " << subsets.at(maxIndex-1).getCurrentWidth()<< std::endl;
+    outputFiles(subsets.at(maxIndex), max, 'b');
     return max;
 }
 
