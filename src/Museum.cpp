@@ -11,43 +11,31 @@ void Museum::readFile(char *filename) {
     if(!artFile.is_open())
         throw runtime_error("ERROR: Could not open art file");
 
+    // read width and height from file
     int temp = 0;
     artFile >> temp;
     wall->setWidth(temp);
     artFile >> temp;
     wall->setHeight(temp);
 
-    int total = 0;
-
     string buffer;
 
     artFile >> temp;
     int* info = new int[4];
     for(int i = 0; i < temp; i++) {
+
+        // read attributes and store in an array
         artFile >> info[0];
         artFile >> info[1];
         artFile >> info[2];
         artFile >> info[3];
 
-        total += info[2];
-
+        // insert to temp art variable and add to lists of art pieces
         Art art(info[0], info[1], info[2], info[3]);
         artPieces.emplace_back(art, false);
         sortedArt.insert(art);
         sortedValue.insert(art);
     }
-
-//    std::cout << "total width " << total/2 << std::endl;
-
-//    std::cout << "Sorted Art by price" << std::endl;
-//    for(auto& c : sortedArt) {
-//        std::cout << c << std::endl;
-//    }
-//
-//    std::cout << "Sorted Art by value" << std::endl;
-//    for(auto& c : sortedValue) {
-//        std::cout << c << std::endl;
-//    }
 
     delete[] info;
 }
@@ -61,17 +49,20 @@ vector<std::pair<Art, bool>> &Museum::getList() {
 }
 
 Art &Museum::getArt(int ID) {
-    for(int i = 0; i < artPieces.size(); i++) {
-        if(artPieces[i].first.getID() == ID)
-            return artPieces[i].first;
+
+    for(auto & artPiece : artPieces) {
+        if(artPiece.first.getID() == ID)
+            return artPiece.first;
     }
     throw out_of_range(to_string(ID) + " not found in list");
 }
 
 void Museum::addArt(int ID) {
-    for(int i = 0; i < artPieces.size(); i++) {
-        if (artPieces[i].first.getID() == ID) {
-            wall->addArt(artPieces[i].first);
+
+    // sort through art list and find art based on id
+    for(auto & artPiece : artPieces) {
+        if (artPiece.first.getID() == ID) {
+            wall->addArt(artPiece.first);
             return;
         }
     }
@@ -79,6 +70,7 @@ void Museum::addArt(int ID) {
 }
 
 void Museum::addArtIndex(int i) {
+    // add art to list if its in range
     if(i > artPieces.size() || i < 0)
         throw out_of_range(to_string(i) + " is out of range");
 
