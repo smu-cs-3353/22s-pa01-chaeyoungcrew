@@ -7,11 +7,13 @@
 Algorithm::Algorithm(char* file) {
     m.readFile(file);
     fileName = file;
+    fileName = fileName.substr(6);
 }
 
 Algorithm::Algorithm(char* file, int size) {
     m.readFile(file, size);
     fileName = file;
+    fileName = fileName.substr(6);
 }
 
 double Algorithm::bruteForce() {
@@ -103,14 +105,14 @@ double Algorithm::heuristicAlgo() {
 }
 
 void Algorithm::outputFiles(const Wall& wall, int price, char algo) {
-    fileName = fileName.substr(6);
+    std::cout << fileName << std::endl;
     string ofileName;
     string temp;
     switch(algo) {
         // creates output file name in format "inputfile-algoType.txt"
         case 'b':
             ofileName = "data/" + fileName.substr(0, fileName.size()-4) + "-bruteforce.txt";
-            std::cout << ofileName << std::endl;
+//            std::cout << ofileName << std::endl;
             break;
         case 'e':
             ofileName = "data/" + fileName.substr(0, fileName.size()-4) + "-highvalue.txt";
