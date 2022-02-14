@@ -23,7 +23,7 @@ $ cd FullFilePathHere
 ```
 Next, compile all of the relevant files using g++
 ```bash
-$ g++ src/main.cpp src.Art.cpp src/Wall.cpp src/DSLinkedList.h src/Museum.cpp src.Algorithm.cpp
+$ g++ src/main.cpp src/Art.cpp src/Wall.cpp src/DSLinkedList.h src/Museum.cpp src/Algorithm.cpp
 ```
 Run the program
 ```bash
