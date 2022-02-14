@@ -105,7 +105,7 @@ double Algorithm::heuristicAlgo() {
 }
 
 void Algorithm::outputFiles(const Wall& wall, int price, char algo) {
-    std::cout << fileName << std::endl;
+    fileName.substr(fileName.find('/'));
     string ofileName;
     string temp;
     switch(algo) {

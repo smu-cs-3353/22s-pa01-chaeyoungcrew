@@ -18,7 +18,7 @@ int main(int argc, char** argv) {
         cout << fixed << setprecision(5);
         for (int i = 1; i < 100000; i++) {
             if (i > 25)
-                i = ceil((i - 1) * 1.5);
+                i += 1000;
             chrono::high_resolution_clock::time_point s1 = chrono::high_resolution_clock::now();
             Algorithm a(argv[1], i);
             chrono::high_resolution_clock::time_point s2 = chrono::high_resolution_clock::now();
