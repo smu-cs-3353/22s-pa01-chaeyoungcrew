@@ -107,7 +107,7 @@ void Algorithm::outputFiles(const Wall& wall, int price, char algo) {
     switch(algo) {
         // creates output file name in format "inputfile-algoType.txt"
         case 'b':
-            ofileName = "../data/" + fileName.substr(0, fileName.size()-4) + "-bruteforce.txt";
+            //ofileName = "../data/" + fileName.substr(0, fileName.size()-4) + "-bruteforce.txt";
             break;
         case 'e':
             ofileName = "../data/" + fileName.substr(0, fileName.size()-4) + "-highvalue.txt";

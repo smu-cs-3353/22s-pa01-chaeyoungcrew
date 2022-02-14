@@ -15,7 +15,7 @@ env:
   # the name of any input files (use relative path)
   INPUT_FILE: input/shortTest.txt
   # the name of any output files (use relative paths)
-  OUTPUT_FILE: data/shortTest-bruteforce.txt data/shortTest-custom.txt data/shortTest-highvalue.txt
+  OUTPUT_FILE: input/shortTest-bruteforce.txt input/shortTest-custom.txt input/shortTest-highvalue.txt
 
 
 jobs:
@@ -57,4 +57,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: project_output
-          path: ${{github.workspace}}/build/data
+          path: ${{github.workspace}}/build/input

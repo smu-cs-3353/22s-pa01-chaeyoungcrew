@@ -13,7 +13,7 @@ int main(int argc, char** argv) {
     if (argc == 1)
         cout << "No arguments provided." << endl;
     else {
-        ofstream data("data/data.csv");
+        ofstream data("input/data.csv");
         data << fixed << setprecision(5) << "Num,Brute,Expensive,Heuristic" << endl;
         cout << fixed << setprecision(5);
         for (int i = 1; i < 100000; i++) {
