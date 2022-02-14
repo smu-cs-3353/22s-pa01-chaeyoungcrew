@@ -30,19 +30,19 @@ int main(int argc, char** argv) {
             cout << "Brute Force:          $" << a.bruteForce() << endl;
             chrono::high_resolution_clock::time_point t2 = chrono::high_resolution_clock::now();
             chrono::duration<double> bruteTime = t2 - t1 + s2 - s1;
-            //cout << "Time: " << bruteTime.count() << " seconds." << endl;
+            cout << "Time: " << bruteTime.count() << " seconds." << endl;
             data << bruteTime.count() << ",";
 
             cout << "Most Expensive First: $" << a.mostExpensiveFirst() << endl;
             t1 = chrono::high_resolution_clock::now();
             chrono::duration<double> expensiveTime = t1 - t2 + s2 - s1;
-            //cout << "Time: " << expensiveTime.count() << " seconds." << endl;
+            cout << "Time: " << expensiveTime.count() << " seconds." << endl;
             data << expensiveTime.count() << ",";
 
             cout << "Heuristic:            $" << a.heuristicAlgo() << endl;
             t2 = chrono::high_resolution_clock::now();
             chrono::duration<double> heuristicTime = t2 - t1 + s2 - s1;
-            //cout << "Time: " << heuristicTime.count() << " seconds." << endl;
+            cout << "Time: " << heuristicTime.count() << " seconds." << endl;
             data << heuristicTime.count() << endl;
         }
         data.close();
