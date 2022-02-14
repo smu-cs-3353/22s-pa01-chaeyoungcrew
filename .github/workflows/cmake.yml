@@ -15,7 +15,7 @@ env:
   # the name of any input files (use relative path)
   INPUT_FILE: input/shortTest.txt
   # the name of any output files (use relative paths)
-  OUTPUT_FILE: input/shortTest-bruteforce.txt input/shortTest-custom.txt input/shortTest-highvalue.txt
+  OUTPUT_FILE: data/shortTest-bruteforce.txt data/shortTest-custom.txt data/shortTest-highvalue.txt
 
 
 jobs:
