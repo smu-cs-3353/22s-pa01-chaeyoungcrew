@@ -27,7 +27,7 @@ $ g++ src/main.cpp src/Art.cpp src/Wall.cpp src/DSLinkedList.h src/Museum.cpp sr
 ```
 Run the program, this program takes one command line argument: the list of art pieces
 ```bash
-$ ./a.out data/inputFileHere.txt
+$ ./a.out inputFileHere.txt
 ```
 
 The Input file has to be formatted in the following manner, note that every value 
@@ -57,7 +57,8 @@ as the number of art pieces increases:
 ![timing graph](Graphs/timing_graph.png)
 
 The first thing you might notice in this graph is the state of the Brute force
-algorithm. The reasoning for its running along the x-axis is due to its nature. 
+algorithm. The reasoning for its running along the x-axis is because after a certain 
+point, we cut off the algorithm because it would take far too long. 
 As stated above, the nature of producing every subset of the set of art is highly 
 inefficient and will grow scaling by a factorial. Later we will have a closer look 
 at this algorithm.
@@ -67,7 +68,7 @@ identically as the number of art pieces grows. This is due to both algorithms fu
 in close to the same way: by inserting the art into a set to pre-sort based on a value, then 
 inserting them onto the wall in order until space runs out. The close equivalency
 of these algorithms easily explain their proximity. While the brute force algorithm 
-has a complexity of O(n), the heuristic and expensive have a complexity that resembles that of
+has a complexity of O(n!), the heuristic and expensive have a complexity that resembles that of
 O(n*log(n)).
 
 While the most expensive first algorithm sorts the art based on price alone, our custom 
@@ -90,7 +91,7 @@ Here is the graph showing the total value of the wall after the art has been pla
 
 Unlike the graph for timing, all three algorithms vary quite a bit. The expensive first algorithm 
 seemed to be consistent in the price of the wall, even as the dataset grew in size. The cause of this 
-anomoly could be due to the chance that the most expensive art piece, might also be the largest art piece, 
+anomaly could be due to the chance that the most expensive art piece, might also be the largest art piece, 
 leading it to consistently take up most of the wall space. As well see in the Heuristic, the most expensive art piece 
 might not always be the most valuable in terms of value per unit of space on the wall. Although this algorithm
 might be useful when used against smaller datasets, its effectiveness does seem to drop
@@ -110,8 +111,10 @@ choice when looking for the most value, the size of the art in comparison to the
 Below is the graph for Brute force prices:
 ![brute_prices](Graphs/brute_price.png)
 Although it might be expected to see brute force dominating the prices with the smaller data sets,
-that is not the case. As I mentioned above, the smaller data sets also lead to less amount of choice
-when it came to picking the art for the wall, leading to similar results for every algorithm.
+that is not the case. As mentioned above, the smaller data sets also lead to less amount of choice
+when it came to picking the art for the wall, leading to similar results for every algorithm. Theoretically, if
+the brute force algorithm was allowed to run through all the cases, it would consistently be greater than or equal to 
+any other algorithm that could be written. 
 
 ### Conclusion
 Although the Brute force algorithm might reign superior when wishing for an algorithm that 
@@ -122,4 +125,4 @@ Heuristic algorithm, with the speed of the expensive first and the accuracy of t
 algorithm.
 
 ## Credits
-This project was completed entirely by Zach Suzuki and Daniel Ryan for CS3353, Fundamentals of Algorithms taught by Dr. Fontenot.
+This project was completed entirely by Zachary Suzuki and Daniel Ryan for CS3353, Fundamentals of Algorithms taught by Dr. Fontenot.
