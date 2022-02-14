@@ -103,17 +103,20 @@ double Algorithm::heuristicAlgo() {
 }
 
 void Algorithm::outputFiles(const Wall& wall, int price, char algo) {
+    fileName = fileName.substr(6);
     string ofileName;
+    string temp;
     switch(algo) {
         // creates output file name in format "inputfile-algoType.txt"
         case 'b':
-            ofileName = "../data/" + fileName.substr(0, fileName.size()-4) + "-bruteforce.txt";
+            ofileName = "data/" + fileName.substr(0, fileName.size()-4) + "-bruteforce.txt";
+            std::cout << ofileName << std::endl;
             break;
         case 'e':
-            ofileName = "../data/" + fileName.substr(0, fileName.size()-4) + "-highvalue.txt";
+            ofileName = "data/" + fileName.substr(0, fileName.size()-4) + "-highvalue.txt";
             break;
         case 'h':
-            ofileName = "../data/" + fileName.substr(0, fileName.size()-4) + "-custom.txt";
+            ofileName = "data/" + fileName.substr(0, fileName.size()-4) + "-custom.txt";
             break;
         default:
             break;
