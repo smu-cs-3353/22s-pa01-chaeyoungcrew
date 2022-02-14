@@ -44,7 +44,7 @@ vector<Wall> Algorithm::bfGetSubsets() {
     vector<Wall> subsets;
 
     // terminates if size is too large and im not patient enough to wait
-    if(size > 22)
+    if(size > 19)
         return subsets;
 
     for (int i = 0; i < big; i++) {
@@ -107,13 +107,13 @@ void Algorithm::outputFiles(const Wall& wall, int price, char algo) {
     switch(algo) {
         // creates output file name in format "inputfile-algoType.txt"
         case 'b':
-            ofileName = "data/" + fileName.substr(0, fileName.size()-4) + "-bruteforce.txt";
+            ofileName = "../data/" + fileName.substr(0, fileName.size()-4) + "-bruteforce.txt";
             break;
         case 'e':
-            ofileName = "data/" + fileName.substr(0, fileName.size()-4) + "-highvalue.txt";
+            ofileName = "../data/" + fileName.substr(0, fileName.size()-4) + "-highvalue.txt";
             break;
         case 'h':
-            ofileName = "data/" + fileName.substr(0, fileName.size()-4) + "-custom.txt";
+            ofileName = "../data/" + fileName.substr(0, fileName.size()-4) + "-custom.txt";
             break;
         default:
             break;
