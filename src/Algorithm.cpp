@@ -13,6 +13,7 @@ Algorithm::Algorithm(char* file) {
 Algorithm::Algorithm(char* file, int size) {
     m.readFile(file, size);
     fileName = file;
+//    std::cout << file << std::endl;
     fileName = fileName.substr(6);
 }
 
@@ -105,7 +106,7 @@ double Algorithm::heuristicAlgo() {
 }
 
 void Algorithm::outputFiles(const Wall& wall, int price, char algo) {
-    std::cout << fileName << std::endl;
+//    std::cout << fileName << std::endl;
     string ofileName;
     string temp;
     switch(algo) {
