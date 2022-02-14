@@ -46,11 +46,11 @@ example:
 2 584 754 438
 ```
 
-##Algorithm Analysis
+## Algorithm Analysis
 When discussing each of the 3 algorithms used in this 
 project, speed and accuracy are the two primary variables we focused on.
 
-###Speed
+### Speed
 Here is the graph showing how the speed of each respective algorithm 
 as the number of art pieces increases:
 
@@ -81,7 +81,7 @@ for its accuracy, as it will always pick the most valuable set of pictures. Howe
 at which the time increases with just a small increase in size, this algorithm is quite inefficient in any
 practical way in comparison to the other 2.
 
-###Prices
+### Prices
 Similar to timing, we will first look at all 3 algorithms before taking a closer look at 
 brute force.
 
@@ -113,7 +113,7 @@ Although it might be expected to see brute force dominating the prices with the 
 that is not the case. As I mentioned above, the smaller data sets also lead to less amount of choice
 when it came to picking the art for the wall, leading to similar results for every algorithm.
 
-###Conclusion
+### Conclusion
 Although the Brute force algorithm might reign superior when wishing for an algorithm that 
 consistently chooses the most valuable set of art every time, the extremely inefficient method of 
 achieving this makes the algorithm very impractical. The other two algorithms, although similar in
