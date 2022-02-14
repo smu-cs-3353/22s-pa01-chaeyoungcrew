@@ -3,6 +3,7 @@ project(22s_pa01)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_FLAGS_RELEASE -O3)
 
+configure_file(input/shortTest.txt input/shortTest.txt COPYONLY)
 configure_file(input/ZachsSpecialTest.txt input/ZachsSpecialTest.txt COPYONLY)
 configure_file(input/ZachsSpecialTest2.txt input/ZachsSpecialTest2.txt COPYONLY)
 configure_file(input/ZachsSpecialTest3.txt input/ZachsSpecialTest3.txt COPYONLY)
