@@ -13,30 +13,36 @@ int main(int argc, char** argv) {
     if (argc == 1)
         cout << "No arguments provided." << endl;
     else {
-        ofstream data("Resources/data.csv");
+        ofstream data("data/data.csv");
         data << fixed << setprecision(5) << "Num,Brute,Expensive,Heuristic" << endl;
         cout << fixed << setprecision(5);
-        for (int i = 1; i < 1000; i++) {
+        for (int i = 1; i < 100000; i++) {
+            if (i > 25)
+                i = ceil((i - 1) * 1.5);
+            chrono::high_resolution_clock::time_point s1 = chrono::high_resolution_clock::now();
             Algorithm a(argv[1], i);
+            chrono::high_resolution_clock::time_point s2 = chrono::high_resolution_clock::now();
             data << i << ",";
+
+            cout << "-----" << i << "-----" << endl;
 
             chrono::high_resolution_clock::time_point t1 = chrono::high_resolution_clock::now();
             cout << "Brute Force:          $" << a.bruteForce() << endl;
             chrono::high_resolution_clock::time_point t2 = chrono::high_resolution_clock::now();
-            chrono::duration<double> bruteTime = t2 - t1;
-            cout << "Time: " << bruteTime.count() << " seconds." << endl;
+            chrono::duration<double> bruteTime = t2 - t1 + s1 - s2;
+            //cout << "Time: " << bruteTime.count() << " seconds." << endl;
             data << bruteTime.count() << ",";
 
             cout << "Most Expensive First: $" << a.mostExpensiveFirst() << endl;
             t1 = chrono::high_resolution_clock::now();
-            chrono::duration<double> expensiveTime = t1 - t2;
-            cout << "Time: " << expensiveTime.count() << " seconds." << endl;
+            chrono::duration<double> expensiveTime = t1 - t2 + s1 - s2;
+            //cout << "Time: " << expensiveTime.count() << " seconds." << endl;
             data << expensiveTime.count() << ",";
 
             cout << "Heuristic:            $" << a.heuristicAlgo() << endl;
             t2 = chrono::high_resolution_clock::now();
-            chrono::duration<double> heuristicTime = t2 - t1;
-            cout << "Time: " << heuristicTime.count() << " seconds." << endl;
+            chrono::duration<double> heuristicTime = t2 - t1 + s1 - s2;
+            //cout << "Time: " << heuristicTime.count() << " seconds." << endl;
             data << heuristicTime.count() << endl;
         }
         data.close();
